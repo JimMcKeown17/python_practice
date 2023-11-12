@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="site-header-logo">
+        <h1 class="text-center">
+            Plotly-Flask
+        </h1>
+        <div class="row p-4">
+            <div class="card m-auto" style="width:90%">
+                <div class="card-body">
+                    <div id="chart1"></div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex hic omnis perferendis quo! Ad amet at delectus deleniti, distinctio dolores eaque hic id inventore iure modi mollitia officiis quidem quod sequi similique sit tempora totam ullam unde ut vitae voluptate. Deleniti ea in magnam molestiae nobis numquam pariatur quas quidem rerum! Accusantium aspernatur at commodi consequatur, debitis dolorem dolores doloribus dolorum fugiat libero maiores necessitatibus nihil obcaecati officia provident quam quidem ratione repellat similique ut vel, voluptas voluptatum. Adipisci autem cum cupiditate doloremque earum itaque minima officia quos soluta?
+                        </p>
+
+                </div>
+
+            </div>
+            <div class="card m-auto" style="width:90%">
+                <div class="card-body">
+                    <div id="chart2"></div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex hic omnis perferendis quo! Ad amet at delectus deleniti, distinctio dolores eaque hic id inventore iure modi mollitia officiis quidem quod sequi similique sit tempora totam ullam unde ut vitae voluptate. Deleniti ea in magnam molestiae nobis numquam pariatur quas quidem rerum! Accusantium aspernatur at commodi consequatur, debitis dolorem dolores doloribus dolorum fugiat libero maiores necessitatibus nihil obcaecati officia provident quam quidem ratione repellat similique ut vel, voluptas voluptatum. Adipisci autem cum cupiditate doloremque earum itaque minima officia quos soluta?
+                        </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        var graph1 = {{ graph1JSON | safe}}
+        Plotly.plot("chart1", graph1, {})
+
+        var graph2 = {{ graph2JSON | safe}}
+        Plotly.plot("chart2", graph2, {})
+    </script>
+    {% endblock %}
