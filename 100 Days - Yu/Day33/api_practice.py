@@ -1,6 +1,6 @@
 import requests
 import datetime as dt
-
+#
 # response = requests.get(url="http://api.open-notify.org/iss-now.json")
 # response.raise_for_status()
 # longitude = response.json()["iss_position"]["longitude"]
@@ -11,15 +11,13 @@ import datetime as dt
 # print(iss_position)
 
 url = "https://api.sunrise-sunset.org/json"
-LAT = -33.960758
-LNG = 25.620640
+LAT = 40.579208
+LNG = -75.340828
 # now = dt.datetime.now()
 
 parameters = {
     "lat": LAT,
     "lng": LNG,
-    "formatted": 0
-    # "date": now
 }
 
 
@@ -28,5 +26,4 @@ response.raise_for_status()
 sunrise = response.json()['results']['sunrise']
 sunset = response.json()['results']['sunset']
 
-print(sunset.split("T")[1].split(":")[0])
-
+print(sunrise)
